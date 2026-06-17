@@ -835,7 +835,7 @@
                 { bm: "Bola Sepak", rumi: "Kuratul Qadami", arab: "كُرَةُ الْقَدَمِ", emoji: "⚽" },
                 { bm: "Badminton", rumi: "Kuratur Rishati", arab: "كُرَةُ الرِّيشَةِ", emoji: "🏸" },
                 { bm: "Bola Keranjang", rumi: "Kuratus Sallati", arab: "كُرَةُ السَّلَّةِ", emoji: "🏀" },
-                { bm: "Bola Tampar", rumi: "Kuratul Tairah", arab: "كُرَةُ الطَّائِرَةِ", emoji: "🏐" },
+                { bm: "Bola Tampar", rumi: "Kuratut Ta'irati", arab: "كُرَةُ الطَّائِرَةِ", emoji: "🏐" },
                 { bm: "Berenang", rumi: "As-Sibahatu", arab: "السِّبَاحَةُ", emoji: "🏊" },
                 { bm: "Memanah", rumi: "Ar-Rimayatu", arab: "الرِّمَايَةُ", emoji: "🏹" },
                 { bm: "Menunggang Kuda", rumi: "Rukubul Khaili", arab: "رُكُوبُ الْخَيْلِ", emoji: "🏇" },
@@ -898,8 +898,8 @@
                 { bm: "Limau", rumi: "Laymunun", arab: "لَيْمُونٌ", emoji: "🍋" },
                 { bm: "Nanas", rumi: "Ananasun", arab: "أَنَانَاسٌ", emoji: "🍍" },
                 { bm: "Strawberi", rumi: "Farawlatun", arab: "فَرَاوْلَةٌ", emoji: "🍓" },
-                { bm: "Mangga", rumi: "Manjatun", arab: "مَانْجَا", emoji: "🥭" },
-                { bm: "Pear", rumi: "Kummathratun", arab: "كُمَّثْرَى", emoji: "🍐" },
+                { bm: "Mangga", rumi: "Manja", arab: "مَانْجَا", emoji: "🥭" },
+                { bm: "Pear", rumi: "Kummathra", arab: "كُمَّثْرَى", emoji: "🍐" },
             ]
         },
         makanan: {
@@ -1279,6 +1279,8 @@
             text = text.replace(/ةٌ/g, 'تُنْ');
             text = text.replace(/\u064c/g, '\u064f\u0646\u0652'); // ٌ -> ُنْ
             text = text.replace(/نِ$/g, 'نِي'); // اِثْنَانِ -> اِثْنَاني
+            text = text.replace(/ةِ$/g, 'تِي'); // كُرَةُ الطَّائِرَةِ -> كُرَةُ الطَّائِرَتِي (ti)
+            text = text.replace(/ةُ$/g, 'تُ');  // السِّبَاحَةُ -> السِّبَاحَتُ (tu)
             
             window.speechSynthesis.cancel(); // Stop current speaking
             const utterance = new SpeechSynthesisUtterance(text);
