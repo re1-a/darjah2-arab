@@ -1134,6 +1134,11 @@
             feedback.className = 'quiz-feedback show correct';
             feedback.textContent = '✅ Betul! Hebat! 🌟';
             playSound('correct');
+            
+            // Play correct Arabic pronunciation after the ding sound
+            setTimeout(() => {
+                speakArabic(encodeURIComponent(q.arab));
+            }, 600);
 
             // Track topic progress
             if (!quizState.topicScores[q.topic]) quizState.topicScores[q.topic] = { correct: 0, total: 0 };
